@@ -1,5 +1,5 @@
 
-.content {
+.no-card {
 	height: 100vh;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -18,8 +18,51 @@
 .hint {
 	padding: 10px;
 }
-.create button {
+.button {
 	padding: 0 25px;
 	border-radius: 30px;
 }
+.form-item {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	        align-items: center;
+	padding: 10px;
+}
+.form-item .text {
+	padding-right: 10px;
+}
+.form-item input {
+	background-color: #EEEEEE;
+	border-radius: 5px;
+	padding: 5px 5px;
+	font-size: 14px;
+}
+input[placeholder] {
+	color:#808080;
+}
+.w100 {
+	width: 80%;
+}
+.avatar {
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	        justify-content: center;
+	padding: 10px;
+}
+.avatar image {
+	width: 100px;
+	height: 100px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
 
