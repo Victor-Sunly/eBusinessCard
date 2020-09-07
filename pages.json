@@ -1,0 +1,47 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				// "navigationBarTitleText": "电子名片"
+			}
+		},
+		{
+			"path": "pages/eCardLibrary/index",
+			"style": {
+				"navigationBarTitleText": "名片库"
+			}
+		}
+		
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "电子名片",
+		"navigationBarBackgroundColor": "#0099FF",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#999794",
+		"selectedColor":"#33312e",
+		"borderStyle":"white",
+		"backgroundColor":"#fafafa",
+		"list": [
+			{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/index-bar.png",
+				"selectedIconPath":"static/index-bra@selected.png",
+				"color": "#cdcdcd",
+				"selectedColor": "#0099FF",
+				"text":"我的名片"
+			},
+			{
+				"pagePath": "pages/eCardLibrary/index",
+				"iconPath": "static/cord.png",
+				"selectedIconPath":"static/cord@selected.png",
+				"color": "#cdcdcd",
+				"selectedColor": "#0099FF",
+				"text":"名片库"
+			}
+		]
+	}
+}
