@@ -56,14 +56,22 @@
 		data() {
 			return {
 				// hasCard: false
-				createCard: true
+				createCard: false
 			}
 		},
 		onLoad() {
 
 		},
 		methods: {
-			clickCreateCard: function(e) {
+			clickCreateCard: async function(e) {
+				const res = await uniCloud.callFunction({
+					name: 'helloworld',
+					data: {
+						a: 2,
+						b: 3
+					}
+				})
+				console.log('res---',res)
 				this.createCard = true;
 			}
 		}
