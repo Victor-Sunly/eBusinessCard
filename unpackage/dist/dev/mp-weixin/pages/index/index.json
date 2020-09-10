@@ -1,3 +1,7 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "no-card": "/pages/index/compomnents/NoCard",
+    "card-info": "/pages/index/compomnents/CardInfo",
+    "composition": "/pages/index/compomnents/Composition"
+  }
 }
