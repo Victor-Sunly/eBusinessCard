@@ -1,0 +1,11 @@
+// 本文件中的json内容将在云函数【运行】时作为参数传给云函数。
+// 配置教程参考：https://uniapp.dcloud.net.cn/uniCloud/quickstart?id=runparam
+{"_id":"0",
+"openid":"fakjakj",
+"cardName":"1111111",
+"cardTel":"18888888888",
+"cardCompanyList":[{"company":"上海","position":"闵行区"}],
+"cardEmail":"",
+"cardQQ":"",
+"cardAddress":""
+}

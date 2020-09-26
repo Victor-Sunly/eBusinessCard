@@ -4,38 +4,38 @@
 		<view class="avatar">
 			<image src="../../../static/avatar.jpg" mode="aspectFit"></image>
 		</view>
-		<form @submit="" @reset="">
+		<form @submit="createCard" @reset="">
 			<view class="form-item">
 				<text class="text">姓名</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的真实姓名" />
+				<input name="cardName" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的真实姓名" />
 			</view>
 			<view class="form-item">
 				<text class="text">电话</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的手机号" />
+				<input name="cardTel" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的手机号" />
 			</view>
 			<view class="form-item">
 				<text class="text">单位</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的单位" />
+				<input name="company" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的单位" />
 			</view>
 			<view class="form-item">
 				<text class="text">职业</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的职业" />
+				<input name="position" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的职业" />
 			</view>
 			<view class="form-item">
 				<text class="text">邮箱</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的邮箱" />
+				<input name="cardEmail" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的邮箱" />
 			</view>
 			<view class="form-item">
 				<text class="text">微信/QQ</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的微信/QQ" />
+				<input name="cardQQ" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的微信/QQ" />
 			</view>
 			<view class="form-item">
 				<text class="text">地址</text>
-				<input placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的地址" />
+				<input name="cardAddress" placeholder-style="font-size:13px" class="uni-input" focus placeholder="请输入您的地址" />
 			</view>
 			
 			<view class="form-item">
-				<button @click="createCard()" type="primary" form-type="submit" class="button w100">下一步</button>
+				<button type="primary" form-type="submit" class="button w100">下一步</button>
 			</view>
 
 		</form>
@@ -44,9 +44,22 @@
 
 <script>
 	export default {
+		created() {
+			
+		},
 		methods:{
-			createCard() {
-				this.$emit('nextStep')
+			async createCard(e) {
+				const {value} = e.detail;
+				const openid = uni.getStorageSync('openid');
+				const params = {
+					"_id": openid,
+					"openid": openid,
+					...value
+				};
+				
+				const retult = await this.$uniCloud('setCardInfo', params);
+				console.log('retult--',retult)
+				// this.$emit('nextStep')
 			}
 		}
 	}

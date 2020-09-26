@@ -8,7 +8,7 @@
 		<!-- 背景 -->
 		<view class="bg-style public-style">
 			<view class="title">选择背景</view>
-			<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
+			<scroll-view class="scroll-view_H" scroll-x="true">
 				<block v-for="(item,index) in bgImages" :key="index">
 					<view @click="selectedBg(index)" class="scrol-item" :class="'style-'+index"><span :class="{active: selectedBgIndex === index}"></span></view>
 				</block>
@@ -17,22 +17,28 @@
 		<!-- 板式 -->
 		<view class="type public-style">
 			<view class="title">选择板式</view>
-			<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="120">
+			<scroll-view class="scroll-view_H" scroll-x="true">
 				<block v-for="(item,index) in typesets" :key="index">
 					<view @click="selectedTs(index)" class="scrol-item special-font">
 						{{item}}
 						<span :class="{active: selectedTsIndex === index}"></span>
 					</view>
 				</block>
-
-			</scroll-view>.
+			</scroll-view>
 		</view>
 		<!-- 标题 -->
 		<view class="share-title public-style">
 			<view class="title">分享标题</view>
-			标题
+			<textarea
+				maxlength="28"
+				@input="inputShareTitle"
+				class="share-content"
+				value=""
+				placeholder="您好这是我的名片,请惠存!"
+			/>
+			<text class="tips">{{shareTitle.length}}/28</text>
 		</view>
-		
+		<button>保存</button>
 	</view>
 </template>
 
@@ -51,7 +57,7 @@
 				selectedBgIndex: 0, //默认为选择第一张背景图
 				typesets: ['简约', '通用', '商务'],
 				selectedTsIndex: 0, // 默认选择第一个板式
-				
+				shareTitle: ''
 	        }
 	    },
 	    methods: {
@@ -60,6 +66,9 @@
 			},
 			selectedTs(index) {
 				this.selectedTsIndex = index;
+			},
+			inputShareTitle(e) {
+				this.shareTitle = e.detail.value;
 			}
 	    }
 	}
@@ -83,9 +92,9 @@
 		border-radius: 10px;
 	}
 	.title {
-		font-size: 18px;
+		font-size: 16px;
 		color: #0099FF;
-		margin: 10px 0;
+		margin: 10px 0 10px 10px;
 	}
 	
 	.scroll-view_H {
@@ -147,6 +156,38 @@
 		-webkit-text-fill-color: transparent;
 		-webkit-background-clip: text;
 	}
-
+	
+	.share-title {
+		display: flex;
+		position: relative;
+		flex-direction: column;
+		justify-content: center;
+		margin-bottom: 10px;
+	}
+	
+	.share-content {
+		height: 100px;
+		background: #FFFFFF;
+		box-sizing: border-box;
+		padding: 5px;
+		font-size: 14px;
+		border-radius: 10px;
+		margin: 0 10px;
+	}
+	.share-title .tips {
+		align-self: flex-end;
+		position: absolute;
+		bottom: 4px;
+		font-size: 12px;
+		color: #808080;
+	}
+	button {
+		font-size: 16px;
+		border-radius: 30px;
+		padding: 0 80px;
+		color: #FFFFFF;
+		background-color: #0099FF;
+		margin-bottom: 10px;
+	}
 	
 </style>

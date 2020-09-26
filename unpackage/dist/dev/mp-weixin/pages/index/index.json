@@ -2,6 +2,7 @@
   "usingComponents": {
     "no-card": "/pages/index/compomnents/NoCard",
     "card-info": "/pages/index/compomnents/CardInfo",
-    "composition": "/pages/index/compomnents/Composition"
+    "composition": "/pages/index/compomnents/Composition",
+    "my-card": "/pages/index/compomnents/MyCard"
   }
 }

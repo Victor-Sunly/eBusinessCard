@@ -20,5 +20,6 @@
   "dependencies": {
     "copy-webpack-plugin": "^6.1.0",
     "webpack": "^4.44.1"
-  }
+  },
+  "cloud": true
 }

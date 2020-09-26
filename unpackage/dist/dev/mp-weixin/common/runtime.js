@@ -109,7 +109,7 @@
 /******/ 		if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 		else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 			promises.push(installedCssChunks[chunkId] = new Promise(function(resolve, reject) {
-/******/ 				var href = "" + ({"pages/index/compomnents/Composition":"pages/index/compomnents/Composition","pages/index/compomnents/CardInfo":"pages/index/compomnents/CardInfo","pages/index/compomnents/NoCard":"pages/index/compomnents/NoCard"}[chunkId]||chunkId) + ".wxss";
+/******/ 				var href = "" + ({"pages/index/compomnents/Composition":"pages/index/compomnents/Composition","pages/index/compomnents/CardInfo":"pages/index/compomnents/CardInfo","pages/index/compomnents/MyCard":"pages/index/compomnents/MyCard","pages/index/compomnents/NoCard":"pages/index/compomnents/NoCard"}[chunkId]||chunkId) + ".wxss";
 /******/ 				var fullhref = __webpack_require__.p + href;
 /******/ 				var existingLinkTags = document.getElementsByTagName("link");
 /******/ 				for(var i = 0; i < existingLinkTags.length; i++) {
